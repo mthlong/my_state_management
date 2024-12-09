@@ -156,5 +156,5 @@ class _CounterScreenState extends State<CounterScreen> {
 ```
 
 ## Additional information
-For more details, visit the [!documentation](https://dart.dev/tools/pub/writing-package-pages).
-Contributions are welcome! To contribute, submit a pull request or reach out to us on GitHub.
+- For more details, visit the [documentation](https://dart.dev/tools/pub/writing-package-pages).
+- Contributions are welcome! To contribute, submit a pull request or reach out to us on GitHub.
