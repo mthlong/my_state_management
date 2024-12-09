@@ -17,25 +17,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class CounterScreen extends StatefulWidget {
+class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
 
   @override
-  _CounterScreenState createState() => _CounterScreenState();
-}
-
-class _CounterScreenState extends State<CounterScreen> {
-  final StateProvider _stateProvider = StateProvider();
-
-  @override
-  void initState() {
-    super.initState();
-    _stateProvider.initialize<int>('counter', 0); // Initialize state
-  }
-
-  @override
   Widget build(BuildContext context) {
-    final counterState = _stateProvider.getState<int>('counter');
+    final StateProvider stateProvider = StateProvider();
+    stateProvider.initialize<int>('counter', 0); // Initialize state
+    final counterState = stateProvider.getState<int>('counter');
 
     return Scaffold(
       appBar: AppBar(title: const Text('My Library Example')),
@@ -55,8 +44,7 @@ class _CounterScreenState extends State<CounterScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           final currentCounter = counterState?.value ?? 0;
-          _stateProvider.update<int>(
-              'counter', currentCounter + 1); // Update state
+          stateProvider.update<int>('counter', currentCounter + 1); // Update state
         },
         child: const Icon(Icons.add),
       ),
